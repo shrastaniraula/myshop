@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
-import os
+# import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -123,11 +123,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+# ]
 
-# STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = BASE_DIR / 'static'
 
 
 # Default primary key field type
@@ -151,3 +151,13 @@ STRIPE_PUBLISHABLE_KEY = 'pk_test_51NSb0hBlJ9yZngbfJbbYhnRQu4RlOakYjAunF74jH2JsR
 STRIPE_SECRET_KEY = 'sk_test_51NSb0hBlJ9yZngbf2plCa6jza9a0FA8GSCP5DeiPtq40Fbj5jocYXEhaVIwjLeEmgGrQNVrWU7f2Hep1EZccRMs5005mqVPVKl' # Secret key
 STRIPE_API_VERSION = '2022-08-01'
 STRIPE_WEBHOOK_SECRET = 'whsec_c18f79856aa1faa36335a67c1af4593ed000e5234d9161168d2fa05073cc0efc'
+
+
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'shrastaniraula@gmail.com'
+EMAIL_HOST_PASSWORD = 'csbyynlduiugqvjd'
